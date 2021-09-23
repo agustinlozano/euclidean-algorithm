@@ -4,18 +4,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MACRO
-
 typedef struct {
     int numerator, denominator;
-} fraccion;
+} fraction;
 
-void initialize(fraccion *f);
+void initialize(fraction *f);
 
-int mcd(fraccion *f);
+int mcd(fraction *f);
 
-fraccion reduce(fraccion *f);
+fraction reduce(fraction *f, int mcd);
 
-void muestra(fraccion f);
+void muestra(fraction f);
 
 #endif
