@@ -4,8 +4,11 @@
     /*
         int a, b, q, r, numerator, denominator;
 
-        a = 340;
-        b = 45;
+        numerator = 340
+        denominator = 45
+
+        a = numerator;
+        b = denominator;
 
         while(b >= 0){
             q = a / b;
@@ -20,17 +23,17 @@
     */
 
 int main(void) {
-    fraccion fraction;
+    fraction f;
     int mcdValue;
 
     printf("\tAlgoritmo de Euclides\n");
-    initialize(&fraction);
+    initialize(&f);
 
-    mcdValue = mcd(&fraction);
-    printf("\nMCD: %d", mcdValue);
-    fraccion fResult = reduce(&fraction);
+    mcdValue = mcd(&f);
+    printf("\nMCD: %d\n", mcdValue);
+    fraction fResult = reduce(&f, mcdValue);
 
-    //muestra(fraction);
-    
+    muestra(fResult);
+
     return EXIT_SUCCESS;
 }
