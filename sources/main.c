@@ -1,39 +1,23 @@
 #include "euclidean.h"
 
-    //Algoritmo modelo
-    /*
-        int a, b, q, r, numerator, denominator;
-
-        numerator = 340
-        denominator = 45
-
-        a = numerator;
-        b = denominator;
-
-        while(b >= 0){
-            q = a / b;
-            r = a - (b * q);
-
-            a = b;
-            b = r;
-        }
-
-        numerator = numerator / a;
-        denominator = denominator / a;
-    */
-
 int main(void) {
-    fraction f;
-    int mcdValue;
+    fraction f = {340, 45};
+    fraction f1 = {140, 26};
+    fraction f2 = {380, 44};
+    fraction f3 = {830, 675};
 
     printf("\tAlgoritmo de Euclides\n");
-    initialize(&f);
+    printf("\nDadas las fracciones originales: \n");
+    muestra(f);
+    muestra(f1);
+    muestra(f2);
+    muestra(f3);
 
-    mcdValue = mcd(&f);
-    printf("\nMCD: %d\n", mcdValue);
-    fraction fResult = reduce(&f, mcdValue);
-
-    muestra(fResult);
+    printf("\nLas fracciones reducidas resultantes respectivamente son: \n");
+    muestra(reduce(&f));
+    muestra(reduce(&f1));
+    muestra(reduce(&f2));
+    muestra(reduce(&f3));
 
     return EXIT_SUCCESS;
 }

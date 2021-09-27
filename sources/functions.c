@@ -1,21 +1,19 @@
 #include "euclidean.h"
 
-void initialize(fraction *f) {
-    int p, q;
+fraction reduce(fraction *f) {
+    fraction fResult;
+    int p = f -> numerator;
+    int q = f -> denominator;
 
-    printf("\nVamos a inicializar la fraccion introduciendo los valores");
-    printf("\nIngrese el valor del numerador: ");
-    scanf(" %d", &p);
+    int mcdValue = mcd(f);
 
-    //Aplicar validacion p
+    p = p / mcdValue;
+    q = q / mcdValue;
 
-    printf("\nIngrese el valor del denominador: ");
-    scanf(" %d", &q);
+    fResult.numerator = p;
+    fResult.denominator = q;
 
-    //Aplicar validacion q
-
-    f -> numerator = p;
-    f -> denominator = q;
+    return fResult;
 }
 
 int mcd(fraction *f) {
@@ -35,21 +33,6 @@ int mcd(fraction *f) {
     return (mcdValue = a);
 }
 
-fraction reduce(fraction *f, int mcd) {
-    fraction fResult;
-    int p = f -> numerator;
-    int q = f -> denominator;
-
-    //Funcion incompleta.
-    p = p / mcd;
-    q = q / mcd;
-
-    fResult.numerator = p;
-    fResult.denominator = q;
-
-    return fResult;
-}
-
 void muestra(fraction f) {
-    printf("\nLa fraccion reducida es: p/q = %d/%d\n", f.numerator, f.denominator);
+    printf("p/q = %d/%d\n", f.numerator, f.denominator);
 }
