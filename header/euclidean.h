@@ -8,11 +8,9 @@ typedef struct {
     int numerator, denominator;
 } fraction;
 
-void initialize(fraction *f);
-
 int mcd(fraction *f);
 
-fraction reduce(fraction *f, int mcd);
+fraction reduce(fraction *f);
 
 void muestra(fraction f);
 
